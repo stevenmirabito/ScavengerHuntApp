@@ -81,10 +81,18 @@
                                 <action selector="cancel:" destination="BYZ-38-t0r" id="GlP-u2-zEK"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="NTK-Wm-oGi"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="NTK-Wm-oGi">
+                            <connections>
+                                <segue destination="aFu-uR-rtt" kind="unwind" identifier="DoneItem" unwindAction="unwindToList:" id="uvE-y7-T1r"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="textField" destination="hGF-3z-2UT" id="rJA-6z-rWP"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <exit id="aFu-uR-rtt" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="2319" y="437"/>
         </scene>
