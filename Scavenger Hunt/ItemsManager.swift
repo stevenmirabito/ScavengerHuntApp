@@ -24,9 +24,7 @@ class ItemsManager {
     
     func save() {
         if let theArchivePath = archivePath() {
-            if NSKeyedArchiver.archiveRootObject(itemsList, toFile: theArchivePath) {
-                print("Saved successfully")
-            } else {
+            if !NSKeyedArchiver.archiveRootObject(itemsList, toFile: theArchivePath) {
                 assertionFailure("Could not save data to \(theArchivePath)")
             }
         }

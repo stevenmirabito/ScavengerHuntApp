@@ -62,8 +62,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hGF-3z-2UT">
-                                <rect key="frame" x="20" y="104" width="560" height="30"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Item Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hGF-3z-2UT">
+                                <rect key="frame" x="20" y="94" width="560" height="30"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
@@ -71,8 +71,8 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="trailingMargin" secondItem="hGF-3z-2UT" secondAttribute="trailing" id="45f-jK-eRZ"/>
-                            <constraint firstItem="hGF-3z-2UT" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="40" id="W7w-aZ-Hit"/>
                             <constraint firstItem="hGF-3z-2UT" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="dEz-k6-vgW"/>
+                            <constraint firstItem="hGF-3z-2UT" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="30" id="xVE-qE-Qhv"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Add Item" id="ADo-wg-e2T">
@@ -101,9 +101,11 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="W7S-lA-OzV" userLabel="List NavController" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="kgE-g1-oFG">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" barStyle="black" id="kgE-g1-oFG">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="barTintColor" red="0.96470588235294119" green="0.054901960784313725" blue="0.32549019607843138" alpha="1" colorSpace="calibratedRGB"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -119,9 +121,11 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="2F8-zO-Pue" userLabel="Add NavController" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="i8d-R2-drv">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" barStyle="black" id="i8d-R2-drv">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="barTintColor" red="0.96470588239999999" green="0.054901960780000002" blue="0.32549019610000002" alpha="1" colorSpace="calibratedRGB"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
