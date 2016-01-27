@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="QJ8-K9-Xll">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="W7S-lA-OzV">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
@@ -16,7 +16,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ListViewCell" textLabel="6tN-1g-03x" style="IBUITableViewCellStyleDefault" id="OPM-tV-O4l">
-                                <rect key="frame" x="0.0" y="28" width="600" height="44"/>
+                                <rect key="frame" x="0.0" y="92" width="600" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="OPM-tV-O4l" id="g51-Sr-vgS">
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
@@ -38,10 +38,11 @@
                             <outlet property="delegate" destination="QJ8-K9-Xll" id="srJ-UP-KAj"/>
                         </connections>
                     </tableView>
+                    <navigationItem key="navigationItem" id="kJt-bb-g1y"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="l4d-2u-dwv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="50" y="437"/>
+            <point key="canvasLocation" x="862" y="437"/>
         </scene>
         <!--Add View Controller-->
         <scene sceneID="tne-QT-ifu">
@@ -56,7 +57,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hGF-3z-2UT">
-                                <rect key="frame" x="58" y="86" width="484" height="30"/>
+                                <rect key="frame" x="20" y="60" width="560" height="30"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
@@ -68,10 +69,47 @@
                             <constraint firstItem="hGF-3z-2UT" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="dEz-k6-vgW"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="ADo-wg-e2T"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="695" y="437"/>
+            <point key="canvasLocation" x="2319" y="437"/>
+        </scene>
+        <!--List NavController-->
+        <scene sceneID="GUS-B5-7aw">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="W7S-lA-OzV" userLabel="List NavController" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="kgE-g1-oFG">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="QJ8-K9-Xll" kind="relationship" relationship="rootViewController" id="Vnb-aK-ytv"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="T0e-DN-ebn" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="50" y="437"/>
+        </scene>
+        <!--Add NavController-->
+        <scene sceneID="FSN-1w-atK">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="2F8-zO-Pue" userLabel="Add NavController" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="i8d-R2-drv">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="bEm-1I-nDp"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="RlV-Hf-JJ2" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1507" y="437"/>
         </scene>
     </scenes>
 </document>
