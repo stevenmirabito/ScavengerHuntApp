@@ -16,6 +16,7 @@
 		B0230A811C583C9D00956BFF /* Scavenger_HuntUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0230A801C583C9D00956BFF /* Scavenger_HuntUITests.swift */; };
 		B076DFC71C584EF7001E135A /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B076DFC61C584EF7001E135A /* ListViewController.swift */; };
 		B0DCE63D1C586501006CA8A6 /* ScavengerHuntItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0DCE63C1C586501006CA8A6 /* ScavengerHuntItem.swift */; };
+		B0DCE6411C587418006CA8A6 /* ItemsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0DCE6401C587418006CA8A6 /* ItemsManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,7 @@
 		B0230A821C583C9D00956BFF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B076DFC61C584EF7001E135A /* ListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
 		B0DCE63C1C586501006CA8A6 /* ScavengerHuntItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScavengerHuntItem.swift; sourceTree = "<group>"; };
+		B0DCE6401C587418006CA8A6 /* ItemsManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemsManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -134,6 +136,7 @@
 			isa = PBXGroup;
 			children = (
 				B0DCE63C1C586501006CA8A6 /* ScavengerHuntItem.swift */,
+				B0DCE6401C587418006CA8A6 /* ItemsManager.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -282,6 +285,7 @@
 				B0230A611C583C9D00956BFF /* AppDelegate.swift in Sources */,
 				B0DCE63D1C586501006CA8A6 /* ScavengerHuntItem.swift in Sources */,
 				B076DFC71C584EF7001E135A /* ListViewController.swift in Sources */,
+				B0DCE6411C587418006CA8A6 /* ItemsManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
