@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ListViewController: UITableViewController {
+class ListViewController: UITableViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     let myManager = ItemsManager()
     
@@ -34,7 +34,40 @@ class ListViewController: UITableViewController {
         let item = myManager.itemsList[indexPath.row]
         cell.textLabel?.text = item.name
         
+        if(item.completed) {
+            cell.accessoryType = .Checkmark
+            cell.imageView?.image = item.photo
+        } else {
+            cell.accessoryType = .None
+            cell.imageView?.image = nil
+        }
+        
         return cell
     }
     
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        let imagePicker = UIImagePickerController()
+        
+        if UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.Camera){
+            imagePicker.sourceType = UIImagePickerControllerSourceType.Camera
+        } else {
+            imagePicker.sourceType = UIImagePickerControllerSourceType.PhotoLibrary
+        }
+        
+        imagePicker.delegate = self
+        presentViewController(imagePicker, animated: true, completion: nil)
+    }
+    
+    func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
+        if let indexPath = tableView.indexPathForSelectedRow {
+            let selectedItem = myManager.itemsList[indexPath.row]
+            let photo = info[UIImagePickerControllerOriginalImage] as! UIImage
+            selectedItem.photo = photo
+        
+            dismissViewControllerAnimated(true, completion: {
+                self.tableView.reloadRowsAtIndexPaths([indexPath], withRowAnimation: .Automatic)
+            })
+        }
+    }
+
 }
