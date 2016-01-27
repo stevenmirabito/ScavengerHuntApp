@@ -63,6 +63,7 @@ class ListViewController: UITableViewController, UIImagePickerControllerDelegate
             let selectedItem = myManager.itemsList[indexPath.row]
             let photo = info[UIImagePickerControllerOriginalImage] as! UIImage
             selectedItem.photo = photo
+            myManager.save()
         
             dismissViewControllerAnimated(true, completion: {
                 self.tableView.reloadRowsAtIndexPaths([indexPath], withRowAnimation: .Automatic)
