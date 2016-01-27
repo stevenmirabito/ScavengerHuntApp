@@ -38,7 +38,9 @@
                             <outlet property="delegate" destination="QJ8-K9-Xll" id="srJ-UP-KAj"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="kJt-bb-g1y"/>
+                    <navigationItem key="navigationItem" id="kJt-bb-g1y">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="cZx-gU-tKB"/>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="l4d-2u-dwv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -56,8 +58,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hGF-3z-2UT">
-                                <rect key="frame" x="20" y="60" width="560" height="30"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hGF-3z-2UT">
+                                <rect key="frame" x="20" y="104" width="560" height="30"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
@@ -69,7 +71,10 @@
                             <constraint firstItem="hGF-3z-2UT" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="dEz-k6-vgW"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="ADo-wg-e2T"/>
+                    <navigationItem key="navigationItem" id="ADo-wg-e2T">
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="kik-f5-jRp"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="NTK-Wm-oGi"/>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
