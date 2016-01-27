@@ -22,7 +22,10 @@ class ListViewController: UITableViewController {
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("ListViewCell", forIndexPath: indexPath)
-        cell.textLabel?.text = itemsList[indexPath.row].name
+        
+        let item = itemsList[indexPath.row]
+        cell.textLabel?.text = item.name
+        
         return cell
     }
     

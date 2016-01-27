@@ -101,14 +101,13 @@
 		B0230A5F1C583C9D00956BFF /* Scavenger Hunt */ = {
 			isa = PBXGroup;
 			children = (
+				B0DCE63F1C5869FC006CA8A6 /* Controllers */,
+				B0DCE63E1C5869E0006CA8A6 /* Models */,
 				B0230A601C583C9D00956BFF /* AppDelegate.swift */,
-				B0230A621C583C9D00956BFF /* AddViewController.swift */,
 				B0230A641C583C9D00956BFF /* Main.storyboard */,
-				B0DCE63C1C586501006CA8A6 /* ScavengerHuntItem.swift */,
 				B0230A671C583C9D00956BFF /* Assets.xcassets */,
 				B0230A691C583C9D00956BFF /* LaunchScreen.storyboard */,
 				B0230A6C1C583C9D00956BFF /* Info.plist */,
-				B076DFC61C584EF7001E135A /* ListViewController.swift */,
 			);
 			path = "Scavenger Hunt";
 			sourceTree = "<group>";
@@ -129,6 +128,23 @@
 				B0230A821C583C9D00956BFF /* Info.plist */,
 			);
 			path = "Scavenger HuntUITests";
+			sourceTree = "<group>";
+		};
+		B0DCE63E1C5869E0006CA8A6 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				B0DCE63C1C586501006CA8A6 /* ScavengerHuntItem.swift */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		B0DCE63F1C5869FC006CA8A6 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				B076DFC61C584EF7001E135A /* ListViewController.swift */,
+				B0230A621C583C9D00956BFF /* AddViewController.swift */,
+			);
+			name = Controllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
