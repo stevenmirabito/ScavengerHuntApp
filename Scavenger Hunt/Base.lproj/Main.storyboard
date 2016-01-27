@@ -39,6 +39,12 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Scavenger Hunt" id="kJt-bb-g1y">
+                        <barButtonItem key="leftBarButtonItem" systemItem="trash" id="ozi-cD-MLT">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <connections>
+                                <action selector="clearList:" destination="QJ8-K9-Xll" id="HNV-Zc-NdM"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="cZx-gU-tKB">
                             <connections>
                                 <segue destination="2F8-zO-Pue" kind="presentation" id="9cZ-Ox-e5n"/>

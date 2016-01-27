@@ -12,6 +12,30 @@ class ListViewController: UITableViewController, UIImagePickerControllerDelegate
     
     let myManager = ItemsManager()
     
+    @IBAction func clearList(sender: AnyObject) {
+        let clearConfirmController = UIAlertController(title: "Are you sure you want to clear the list?", message: "This action cannot be undone.", preferredStyle: .ActionSheet)
+        let clearYesAction = UIAlertAction(title: "Remove All Items", style: .Destructive) { (action) in
+            self.myManager.itemsList = [ScavengerHuntItem]();
+            self.myManager.save()
+            
+            var indexPathsToDelete = [NSIndexPath]()
+            if self.tableView.numberOfRowsInSection(0) > 0 {
+                for i in 0...self.tableView.numberOfRowsInSection(0) - 1 {
+                    indexPathsToDelete.append(NSIndexPath(forRow: i, inSection: 0))
+                }
+                
+                self.tableView.deleteRowsAtIndexPaths(indexPathsToDelete, withRowAnimation: .Automatic)
+            }
+        }
+        
+        let clearCancelAction = UIAlertAction(title: "Cancel", style: .Default, handler: nil)
+        
+        clearConfirmController.addAction(clearYesAction)
+        clearConfirmController.addAction(clearCancelAction)
+        
+        self.presentViewController(clearConfirmController, animated: true, completion: nil)
+    }
+    
     @IBAction func unwindToList(segue: UIStoryboardSegue){
         if segue.identifier == "DoneItem" {
             let addVC = segue.sourceViewController as! AddViewController
