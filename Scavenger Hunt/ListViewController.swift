@@ -58,6 +58,14 @@ class ListViewController: UITableViewController, UIImagePickerControllerDelegate
         presentViewController(imagePicker, animated: true, completion: nil)
     }
     
+    override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
+        if editingStyle == .Delete {
+            myManager.itemsList.removeAtIndex(indexPath.row)
+            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Automatic)
+            myManager.save()
+        }
+    }
+    
     func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
         if let indexPath = tableView.indexPathForSelectedRow {
             let selectedItem = myManager.itemsList[indexPath.row]
