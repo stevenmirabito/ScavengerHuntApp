@@ -38,7 +38,7 @@ class ListViewController: UITableViewController, UIImagePickerControllerDelegate
     
     @IBAction func unwindToList(segue: UIStoryboardSegue){
         if segue.identifier == "DoneItem" {
-            let addVC = segue.sourceViewController as! AddViewController
+            let addVC = segue.sourceViewController as! AddItemViewController
             if let newItem = addVC.newItem {
                 myManager.itemsList += [newItem]
                 myManager.save()
@@ -60,7 +60,10 @@ class ListViewController: UITableViewController, UIImagePickerControllerDelegate
         
         if(item.completed) {
             cell.accessoryType = .Checkmark
-            cell.imageView?.image = item.photo
+            
+            if (item.requireImage) {
+                cell.imageView?.image = item.photo
+            }
         } else {
             cell.accessoryType = .None
             cell.imageView?.image = nil
@@ -70,16 +73,24 @@ class ListViewController: UITableViewController, UIImagePickerControllerDelegate
     }
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        let imagePicker = UIImagePickerController()
+        let selectedItem = myManager.itemsList[indexPath.row]
         
-        if UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.Camera){
-            imagePicker.sourceType = UIImagePickerControllerSourceType.Camera
+        if (selectedItem.requireImage) {
+            let imagePicker = UIImagePickerController()
+            
+            if UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.Camera){
+                imagePicker.sourceType = UIImagePickerControllerSourceType.Camera
+            } else {
+                imagePicker.sourceType = UIImagePickerControllerSourceType.PhotoLibrary
+            }
+            
+            imagePicker.delegate = self
+            presentViewController(imagePicker, animated: true, completion: nil)
         } else {
-            imagePicker.sourceType = UIImagePickerControllerSourceType.PhotoLibrary
+            selectedItem.completed = true
+            myManager.save()
+            self.tableView.reloadRowsAtIndexPaths([indexPath], withRowAnimation: .Automatic)
         }
-        
-        imagePicker.delegate = self
-        presentViewController(imagePicker, animated: true, completion: nil)
     }
     
     override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
