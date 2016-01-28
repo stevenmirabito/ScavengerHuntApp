@@ -1,5 +1,5 @@
 //
-//  AddTableViewController.swift
+//  AddItemViewController.swift
 //  Scavenger Hunt
 //
 //  Created by Steven Mirabito on 1/27/16.
