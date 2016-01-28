@@ -75,21 +75,50 @@ class ListViewController: UITableViewController, UIImagePickerControllerDelegate
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         let selectedItem = myManager.itemsList[indexPath.row]
         
-        if (selectedItem.requireImage) {
-            let imagePicker = UIImagePickerController()
+        if (!selectedItem.completed) {
+            if (selectedItem.requireImage) {
+                let imagePicker = UIImagePickerController()
             
-            if UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.Camera){
-                imagePicker.sourceType = UIImagePickerControllerSourceType.Camera
+                if UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.Camera){
+                    imagePicker.sourceType = UIImagePickerControllerSourceType.Camera
+                } else {
+                    imagePicker.sourceType = UIImagePickerControllerSourceType.PhotoLibrary
+                }
+            
+                imagePicker.delegate = self
+                presentViewController(imagePicker, animated: true, completion: nil)
             } else {
-                imagePicker.sourceType = UIImagePickerControllerSourceType.PhotoLibrary
+                selectedItem.completed = true
+                myManager.save()
+                self.tableView.reloadRowsAtIndexPaths([indexPath], withRowAnimation: .Automatic)
+            }
+        } else {
+            var alertMessage = "This action cannot be undone."
+            
+            if (selectedItem.requireImage) {
+                alertMessage = "This will permanently delete the attached picture."
             }
             
-            imagePicker.delegate = self
-            presentViewController(imagePicker, animated: true, completion: nil)
-        } else {
-            selectedItem.completed = true
-            myManager.save()
-            self.tableView.reloadRowsAtIndexPaths([indexPath], withRowAnimation: .Automatic)
+            let uncompleteConfirmController = UIAlertController(title: "Mark as not completed?", message: alertMessage, preferredStyle: .Alert)
+            let uncompleteYesAction = UIAlertAction(title: "Confirm", style: .Destructive) { (action) in
+                let selectedItem = self.myManager.itemsList[indexPath.row]
+                
+                if (selectedItem.requireImage){
+                    selectedItem.photo = nil
+                } else {
+                    selectedItem.completed = false
+                }
+                
+                self.myManager.save()
+                self.tableView.reloadRowsAtIndexPaths([indexPath], withRowAnimation: .Automatic)
+            }
+            
+            let uncompleteCancelAction = UIAlertAction(title: "Cancel", style: .Default, handler: nil)
+            
+            uncompleteConfirmController.addAction(uncompleteYesAction)
+            uncompleteConfirmController.addAction(uncompleteCancelAction)
+            
+            self.presentViewController(uncompleteConfirmController, animated: true, completion: nil)
         }
     }
     
